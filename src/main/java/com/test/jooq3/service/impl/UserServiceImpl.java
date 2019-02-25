@@ -4,6 +4,7 @@ package com.test.jooq3.service.impl;
 import com.generator.tables.pojos.User;
 import com.generator.tables.records.UserRecord;
 import com.test.jooq3.service.UserService;
+import org.jooq.BindingGetSQLInputContext;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void insert(User user) {
-        dslContext.insertInto(u).columns(u.USER_NAME,u.USER_AGE).values(user.getUserName(),user.getUserAge()).execute();
+        dslContext.insertInto(com.generator.tables.User.USER).columns(com.generator.tables.User.USER.USER_NAME, com.generator.tables.User.USER.USER_AGE).values(user.getUserName(), user.getUserAge()).execute();
+
+
 
     }
 

@@ -28,6 +28,7 @@ public class Jooq3ApplicationTests {
         user.setUserAge(30);
         user.setId(20);
         userService.insert(user);
+
     }
 
     @Test
